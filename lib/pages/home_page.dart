@@ -1,5 +1,7 @@
+import 'package:bounce/bounce.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bounceable/flutter_bounceable.dart';
 import 'package:intl/intl.dart';
 import 'package:notes_app/models/transaction_model.dart';
 import 'package:notes_app/pages/transaction_history.dart';
@@ -140,124 +142,127 @@ class _HomePageState extends State<HomePage> {
             
                 const SizedBox(height: 30,),
             
-                Padding(
-                  padding: const EdgeInsets.only(left: 5, right: 5),
+                Bounce(
+                  onTap: (){},
                   child: Padding(
-                    padding: const EdgeInsets.only(left: 15, right: 15),
-                    child: Container(
-                      margin: EdgeInsets.symmetric(horizontal: 10),
-                      padding: EdgeInsets.all(24),
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(colors: [ Color(0xFF4FC3F7), Color(0xFF9C27B0), Color(0xFFE91E63),],
-                      
-                      begin: Alignment.bottomRight,
-                      end: Alignment.topLeft,
-                      transform: GradientRotation(321)),
-                      borderRadius: BorderRadius.circular(25), 
-                      boxShadow: [BoxShadow(
-                        color: Colors.black.withValues(alpha: 0.2),
-                        spreadRadius: 1,
-                        blurRadius: 10,
-                        offset: Offset(0,4),
-                      )]
-                      
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "Total Balance",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 18,
-                            fontFamily: 'InterFont',
-                            fontWeight: FontWeight.w700,
-                          ),
-                        ),
-                        const SizedBox(height: 8),
-                        Text(
-                          '₹${NumberFormat('#,##,###.##').format(totalBalance)}',
-                          style: TextStyle(
-                            fontSize: 36,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        const SizedBox(height: 20),
-                        Row(
-                          children: [
-                            Container(
-                              padding: EdgeInsets.all(4),
-                              decoration: BoxDecoration(
-                                color: Colors.green,
-                                borderRadius: BorderRadius.circular(12),
-                              ),
-                              child: Icon(
-                                Icons.arrow_downward,
-                                color: Colors.white,
-                                size: 16,
-                              ),
+                    padding: const EdgeInsets.only(left: 5, right: 5),
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 15, right: 15),
+                      child: Container(
+                        margin: EdgeInsets.symmetric(horizontal: 10),
+                        padding: EdgeInsets.all(24),
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(colors: [ Color(0xFF4FC3F7), Color(0xFF9C27B0), Color(0xFFE91E63),],
+                        
+                        begin: Alignment.bottomRight,
+                        end: Alignment.topLeft,
+                        transform: GradientRotation(321)),
+                        borderRadius: BorderRadius.circular(25), 
+                        boxShadow: [BoxShadow(
+                          color: Colors.black.withValues(alpha: 0.2),
+                          spreadRadius: 1,
+                          blurRadius: 10,
+                          offset: Offset(0,4),
+                        )]
+                        
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Total Balance",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 18,
+                              fontFamily: 'InterFont',
+                              fontWeight: FontWeight.w700,
                             ),
-                            SizedBox(width: 8),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  "Income",
-                                  style: TextStyle(
-                                    color: Colors.white70,
-                                    fontSize: 18
-                                  ),
-                                ),
-                                Text(
-                                  '₹${NumberFormat('#,##,###.##').format(totalIncome)}',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w600,
-                                  ),
-                                ),
-                              ],
+                          ),
+                          const SizedBox(height: 8),
+                          Text(
+                            '₹${NumberFormat('#,##,###.##').format(totalBalance)}',
+                            style: TextStyle(
+                              fontSize: 36,
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
                             ),
-                            SizedBox(width: 70,),
-                           Expanded(child: 
-                           Row(
+                          ),
+                          const SizedBox(height: 20),
+                          Row(
                             children: [
                               Container(
                                 padding: EdgeInsets.all(4),
                                 decoration: BoxDecoration(
-                                  color: Colors.red,
+                                  color: Colors.green,
                                   borderRadius: BorderRadius.circular(12),
                                 ),
-                                child: Icon(Icons.arrow_upward,
-                                color: Colors.white,
-                                size: 16,),
+                                child: Icon(
+                                  Icons.arrow_downward,
+                                  color: Colors.white,
+                                  size: 16,
+                                ),
                               ),
-                              SizedBox(width: 8,),
+                              SizedBox(width: 8),
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text('Expenses',
-                                  style: TextStyle(
-                                    color: Colors.white70,
-                                    fontSize: 18
-                                  ),),
-          
-                                  Text('₹${NumberFormat('#,##,###.##').format(totalExpenses)}',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.bold
-                                  ),)
+                                  Text(
+                                    "Income",
+                                    style: TextStyle(
+                                      color: Colors.white70,
+                                      fontSize: 18
+                                    ),
+                                  ),
+                                  Text(
+                                    '₹${NumberFormat('#,##,###.##').format(totalIncome)}',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                  ),
                                 ],
-                              )
+                              ),
+                              SizedBox(width: 70,),
+                             Expanded(child: 
+                             Row(
+                              children: [
+                                Container(
+                                  padding: EdgeInsets.all(4),
+                                  decoration: BoxDecoration(
+                                    color: Colors.red,
+                                    borderRadius: BorderRadius.circular(12),
+                                  ),
+                                  child: Icon(Icons.arrow_upward,
+                                  color: Colors.white,
+                                  size: 16,),
+                                ),
+                                SizedBox(width: 8,),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text('Expenses',
+                                    style: TextStyle(
+                                      color: Colors.white70,
+                                      fontSize: 18
+                                    ),),
+                            
+                                    Text('₹${NumberFormat('#,##,###.##').format(totalExpenses)}',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold
+                                    ),)
+                                  ],
+                                )
+                              ],
+                             ))
                             ],
-                           ))
-                          ],
-                        ),   
-                      ],                   
+                          ),   
+                        ],                   
+                      ),
+                      ),               
                     ),
-                    ),               
                   ),
                 ),
                  const SizedBox(height: 25,),

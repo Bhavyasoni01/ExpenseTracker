@@ -1,5 +1,7 @@
+import 'package:bounce/bounce.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bounceable/flutter_bounceable.dart';
 import 'package:intl/intl.dart';
 import 'package:notes_app/pages/add_expense.dart';
 import 'package:notes_app/pages/add_income.dart';
@@ -7,6 +9,7 @@ import 'package:notes_app/services/hive_services.dart';
 import 'package:notes_app/models/transaction_model.dart';
 import 'package:notes_app/pages/transaction_history.dart';
 import 'package:notes_app/pages/transcations.dart';
+import 'package:page_transition/page_transition.dart';
 
 
 class AddPage extends StatefulWidget {
@@ -81,78 +84,77 @@ class _AddPageState extends State<AddPage> {
                     padding: EdgeInsets.only(left: 25),
                     child: Row(  
                       children: [
-                        GestureDetector(
-                          onTap: (){},
-                          child: GestureDetector(
-                            onTap: () {
-                              Navigator.push(context, MaterialPageRoute(builder: (context)=> AddIncome()));
+                        Bounce(
+                          onTap: () {
+                            context.pushTransition(type: PageTransitionType.fade,
+                                child: AddExpense());                   
                             },
-                            child: Container(
-                              height: 120,
-                              width: 170,          
-                              padding: EdgeInsets.all(20),
-                              decoration: BoxDecoration(
-                                color: Color.fromARGB(255, 162, 143, 240),
-                                borderRadius: BorderRadius.circular(21),
-                                boxShadow:[ BoxShadow(
-                              color: Colors.grey.withValues(alpha: 0.5), 
-                              spreadRadius: 2, 
-                              blurRadius: 5, 
-                              offset: Offset(0, 3),
-                            )],
-                              ),
-                              
-                              child: Column(
-                                children: [
-                                  Image.asset('assets/images/ccadd.png',
-                                  cacheHeight: 50,),
-                                  Text('Add Income',
-                                  style: TextStyle(
-                                    color: Colors.black,
-                                    fontSize: 16,
-                                    
-                                  ),),
-                                ],
-                              ),
+                          child: Container(
+                            height: 120,
+                            width: 170,          
+                            padding: EdgeInsets.all(20),
+                            decoration: BoxDecoration(
+                              color: Color.fromARGB(255, 162, 143, 240),
+                              borderRadius: BorderRadius.circular(21),
+                              boxShadow:[ BoxShadow(
+                            color: Colors.grey.withValues(alpha: 0.5), 
+                            spreadRadius: 2, 
+                            blurRadius: 5, 
+                            offset: Offset(0, 3),
+                          )],
+                            ),
+                            
+                            child: Column(
+                              children: [
+                                Image.asset('assets/images/ccadd.png',
+                                cacheHeight: 50,),
+                                Text('Add Income',
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 16,
+                                  
+                                ),),
+                              ],
                             ),
                           ),
                         ),
                         SizedBox(width: 20,),
                        Row(
                         children: [
-                          GestureDetector(
-                          onTap: (){
-                            Navigator.push(context, MaterialPageRoute(builder: (context)=> AddExpense()));
-                          },
-                          child: Container(
-                            height: 120,
-                            width: 170,          
-                            padding: EdgeInsets.all(20),
-                            decoration: BoxDecoration(
-                              color: const Color.fromARGB(255, 230, 190, 131),
-                              borderRadius: BorderRadius.circular(21),
-                              boxShadow:[ BoxShadow(
-                              color: Colors.grey.withValues(alpha: 0.5), 
-                              spreadRadius: 2, 
-                              blurRadius: 5, 
-                              offset: Offset(0, 3),
-                            )],
-                            ),
-                            
-                            child: Column(
-                              children: [
-                                Image.asset('assets/images/ccminus.png',
-                                cacheHeight: 50,),
-                                Text('Add Expense',
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 16,
-                                 
-                                ),),
-                              ],
+                          Bounce(
+                            onTap: (){
+                               context.pushTransition(type: PageTransitionType.fade,
+                                child: AddExpense());
+                            },
+                            child: Container(
+                              height: 120,
+                              width: 170,          
+                              padding: EdgeInsets.all(20),
+                              decoration: BoxDecoration(
+                                color: const Color.fromARGB(255, 230, 190, 131),
+                                borderRadius: BorderRadius.circular(21),
+                                boxShadow:[ BoxShadow(
+                                color: Colors.grey.withValues(alpha: 0.5), 
+                                spreadRadius: 2, 
+                                blurRadius: 5, 
+                                offset: Offset(0, 3),
+                              )],
+                              ),
+                              
+                              child: Column(
+                                children: [
+                                  Image.asset('assets/images/ccminus.png',
+                                  cacheHeight: 50,),
+                                  Text('Add Expense',
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 16,
+                                   
+                                  ),),
+                                ],
+                              ),
                             ),
                           ),
-                        ),
                         ],
                        )
                       ],
@@ -182,7 +184,8 @@ class _AddPageState extends State<AddPage> {
                         padding: const EdgeInsets.only(right: 20),
                         child: GestureDetector(
                           onTap: (){
-                            Navigator.push(context, MaterialPageRoute(builder: (context)=> TransactionHistoryPage()));
+                           context.pushTransition(type: PageTransitionType.fade,
+                                child: TransactionHistoryPage());
                           },
                           child: Text('See All',
                           style: TextStyle(

@@ -2,6 +2,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bounceable/flutter_bounceable.dart';
 import 'package:intl/intl.dart';
 import 'package:notes_app/models/transaction_model.dart';
 import 'package:notes_app/pages/transcations.dart';
@@ -82,65 +83,69 @@ class _ChartsPageState extends State<ChartsPage> {
                     Padding(padding: EdgeInsets.only(left: 25),
                     child: Row(
                       children: [
-                        Container(
+                        Bounceable(
+                         onTap: (){},
+
+                          child: Container(
+                            
+                            height: 110,
+                            width: 170,
+                            padding: EdgeInsets.all(15),
+                            decoration: BoxDecoration(
+                              boxShadow:[ BoxShadow(
+                                color: Colors.grey.withValues(alpha: 0.5), 
+                                spreadRadius: 2, 
+                                blurRadius: 5, 
+                                offset: Offset(0, 3),
+                              )],
+                              color: Color.fromRGBO(203, 170, 243, 1).withValues(alpha: 0.8),
+                              borderRadius: BorderRadius.circular(21),
+                            ),
                           
-                          height: 110,
-                          width: 170,
-                          padding: EdgeInsets.all(15),
-                          decoration: BoxDecoration(
-                            boxShadow:[ BoxShadow(
-                              color: Colors.grey.withValues(alpha: 0.5), 
-                              spreadRadius: 2, 
-                              blurRadius: 5, 
-                              offset: Offset(0, 3),
-                            )],
-                            color: Color.fromRGBO(203, 170, 243, 1).withValues(alpha: 0.8),
-                            borderRadius: BorderRadius.circular(21),
-                          ),
-                        
-                          child: Column(
-                            children: [
-                              Text('Total Income',
-                              style: TextStyle(
-                                color: Colors.grey[800],
-                                fontWeight: FontWeight.bold,
-                                fontSize: 18,
-                                fontFamily: 'InterFont'
-                              ),),
-                        
-                              SizedBox(height: 15,),
-                        
-                              Row(
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.only(left:15.5),
-                                    child: Container(
-                                      width: 27,
-                                      height: 27,
-                                      decoration: BoxDecoration(
-                                        color: Colors.deepPurple,
-                                        borderRadius: BorderRadius.circular(32),
+                            child: Column(
+                              children: [
+                                Text('Total Income',
+                                style: TextStyle(
+                                  color: Colors.grey[800],
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 18,
+                                  fontFamily: 'InterFont'
+                                ),),
+                          
+                                SizedBox(height: 15,),
+                          
+                                Row(
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.only(left:15.5),
+                                      child: Container(
+                                        width: 27,
+                                        height: 27,
+                                        decoration: BoxDecoration(
+                                          color: Colors.deepPurple,
+                                          borderRadius: BorderRadius.circular(32),
+                                        ),
+                                        child: Icon(Icons.arrow_downward_rounded,
+                                        color: Colors.white,
+                                        size: 18,),
                                       ),
-                                      child: Icon(Icons.arrow_downward_rounded,
-                                      color: Colors.white,
-                                      size: 18,),
+                          
+                          
+                                      
                                     ),
-                        
-                        
-                                    
-                                  ),
-                                  SizedBox(width: 5,),
-                                  Text('₹${NumberFormat('#,##,###.##').format(totalIncome)}',
-                                  style: TextStyle(
-                                    fontSize: 16.7,
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.w500
-                                  ),)
-                                ],
-                              ),
-                        
-                              
-                            ],
+                                    SizedBox(width: 5,),
+                                    Text('₹${NumberFormat('#,##,###.##').format(totalIncome)}',
+                                    style: TextStyle(
+                                      fontSize: 16.7,
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.w500
+                                    ),)
+                                  ],
+                                ),
+                          
+                                
+                              ],
+                            ),
                           ),
                         ),
 
@@ -149,65 +154,69 @@ class _ChartsPageState extends State<ChartsPage> {
 
                         Row(
                       children: [
-                        Container(
-                          height: 110,
-                          width: 170,
-                          padding: EdgeInsets.all(15),
-                          decoration: BoxDecoration(
-                            boxShadow:[ BoxShadow(
-                              color: Colors.grey.withValues(alpha: 0.5), 
-                              spreadRadius: 2, 
-                              blurRadius: 5, 
-                              offset: Offset(0, 3),
-                            )],
-                            color: Color.fromRGBO(235, 167, 91, 1).withValues(alpha: 0.7),
-                            borderRadius: BorderRadius.circular(21),
-                          ),
-                        
-                          child: Column(
-                            children: [
-                              Text('Total Expense',
-                              style: TextStyle(
-                                color: Colors.grey[800],
-                                fontWeight: FontWeight.bold,
-                                fontSize: 18,
-                                fontFamily: 'InterFont'
-                              ),),
-                        
-                              SizedBox(height: 15,),
-                        
-                              Row(
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.only(left:15.5),
-                                    child: Container(
-                                      width: 27,
-                                      height: 27,
-                                      decoration: BoxDecoration(
-                                        color: Colors.orange[800],
-                                        borderRadius: BorderRadius.circular(32),
-                                      ),
-                                      child: Icon(Icons.arrow_upward_rounded,
-                                      color: Colors.white,
-                                      size: 18,),
-                                    ),
-                        
-                        
-                                    
-                                  ),
-                                  SizedBox(width: 5,),
-                                  Text('₹${NumberFormat('#,##,###.##').format(totalExpenses)}',
-                                  style: TextStyle(
-                                    fontSize: 16.7,
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.w500
-                                  ),
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
+                        Bounceable(
+                           onTap: (){},
+
+                          child: Container(
+                            height: 110,
+                            width: 170,
+                            padding: EdgeInsets.all(15),
+                            decoration: BoxDecoration(
+                              boxShadow:[ BoxShadow(
+                                color: Colors.grey.withValues(alpha: 0.5), 
+                                spreadRadius: 2, 
+                                blurRadius: 5, 
+                                offset: Offset(0, 3),
+                              )],
+                              color: Color.fromRGBO(235, 167, 91, 1).withValues(alpha: 0.7),
+                              borderRadius: BorderRadius.circular(21),
                             ),
+                          
+                            child: Column(
+                              children: [
+                                Text('Total Expense',
+                                style: TextStyle(
+                                  color: Colors.grey[800],
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 18,
+                                  fontFamily: 'InterFont'
+                                ),),
+                          
+                                SizedBox(height: 15,),
+                          
+                                Row(
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.only(left:15.5),
+                                      child: Container(
+                                        width: 27,
+                                        height: 27,
+                                        decoration: BoxDecoration(
+                                          color: Colors.orange[800],
+                                          borderRadius: BorderRadius.circular(32),
+                                        ),
+                                        child: Icon(Icons.arrow_upward_rounded,
+                                        color: Colors.white,
+                                        size: 18,),
+                                      ),
+                          
+                          
+                                      
+                                    ),
+                                    SizedBox(width: 5,),
+                                    Text('₹${NumberFormat('#,##,###.##').format(totalExpenses)}',
+                                    style: TextStyle(
+                                      fontSize: 16.7,
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.w500
+                                    ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
+                        ),
                           ],
                         ),
                       ],
