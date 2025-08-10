@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bounceable/flutter_bounceable.dart';
 import 'package:intl/intl.dart';
+import 'package:lottie/lottie.dart';
 import 'package:notes_app/models/transaction_model.dart';
 import 'package:notes_app/pages/transaction_history.dart';
 import 'package:notes_app/pages/transcations.dart';
@@ -305,9 +306,11 @@ class _HomePageState extends State<HomePage> {
                   Padding(padding: EdgeInsets.all(40),
                   child: Column(
                     children: [
-                      Icon(Icons.receipt_long,
-                      size: 64,
-                      color: Colors.grey[400]
+                      Lottie.network('https://lottie.host/eea17818-76a5-473e-87a6-e25e1935534a/qWyjvXyelD.json',
+                      width: 100,
+                      height: 100,
+                      animate: true,
+                      repeat: true,
                       ),
                       SizedBox(height: 15,),
                       Text('No Transactions Yet',

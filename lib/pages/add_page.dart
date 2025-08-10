@@ -59,18 +59,7 @@ class _AddPageState extends State<AddPage> {
               style: TextStyle(
                 fontWeight: FontWeight.w500
               ),),
-              leading: Padding(
-                padding: const EdgeInsets.only(left: 8.0),
-                child: Container(
-                  height: 20,
-                  width: 20,
-                  decoration: BoxDecoration(
-                    color: Colors.transparent,
-                    borderRadius: BorderRadius.circular(32),
-                  ),
-                  child: Icon(CupertinoIcons.back),
-                ),
-              ),
+              
               
             ),
 

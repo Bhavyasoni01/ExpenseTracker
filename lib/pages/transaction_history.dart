@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:lottie/lottie.dart';
 import 'package:notes_app/models/transaction_model.dart';
 import 'package:notes_app/pages/transcations.dart';
 import 'package:notes_app/services/hive_services.dart';
@@ -103,33 +104,36 @@ class _TransactionHistoryPageState extends State<TransactionHistoryPage> {
     return Center(
       child: Padding(
         padding: const EdgeInsets.all(40),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(
-              Icons.receipt_long_outlined,
-              size: 80,
-              color: Colors.grey[400],
-            ),
-            const SizedBox(height: 24),
-            Text(
-              'No transactions found',
-              style: TextStyle(
-                fontSize: 20,
-                color: Colors.grey[600],
-                fontWeight: FontWeight.w600,
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Lottie.network('https://lottie.host/eea17818-76a5-473e-87a6-e25e1935534a/qWyjvXyelD.json',
+                        width: 100,
+                        height: 100,
+                        animate: true,
+                        repeat: true,
+                        ),
+              const SizedBox(height: 24),
+              Text(
+                'No transactions found',
+                style: TextStyle(
+                  fontSize: 20,
+                  color: Colors.grey[600],
+                  fontWeight: FontWeight.w600,
+                ),
               ),
-            ),
-            const SizedBox(height: 8),
-            Text(
-              'Your transaction history will appear here',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 16,
-                color: Colors.grey[500],
+              const SizedBox(height: 8),
+              Text(
+                'Your transaction history will appear here',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 16,
+                  color: Colors.grey[500],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

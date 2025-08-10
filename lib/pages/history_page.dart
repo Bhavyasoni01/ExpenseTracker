@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:intl/intl.dart';
 
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:notes_app/models/transaction_model.dart';
 import 'package:notes_app/pages/transcations.dart';
 import 'package:notes_app/services/hive_services.dart';
@@ -260,26 +261,38 @@ class _HistoryPageState extends State<HistoryPage> {
   Widget _buildEmptyState(){
     return Center(
       child: Padding(padding: EdgeInsets.all(40),
-      child: Column(
+      child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        
         children: [
-          Icon(Icons.receipt_long_rounded,
-          size: 80,
-          color: Colors.grey[400],),
-          SizedBox(height: 24,),
-          Text('No Transactions Found',
-          style: TextStyle(
-            fontSize: 20,
-            color: Colors.grey[600],
-            fontWeight: FontWeight.w600
-          ),),
-          SizedBox(height: 10,),
-          Text('Your Transactions will appear here',
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            fontSize: 16,
-            color: Colors.grey[500],
-          ),)
+          Column(
+            
+            children: [
+              SizedBox(height: 150,),
+              Lottie.network('https://lottie.host/bccb3cbd-3f2a-4c30-b54b-80b321bb7417/r60GkBL5iE.json',
+                            width: 100,
+                            height: 100,
+                            animate: true,
+                            repeat: false,
+                            reverse: true
+                            ),
+              SizedBox(height: 24,),
+              Text('No Transactions Found',
+              style: TextStyle(
+                fontSize: 20,
+                color: Colors.grey[600],
+                fontWeight: FontWeight.w600
+              ),),
+              SizedBox(height: 10,),
+              Text('Your Transactions will appear here',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 16,
+                color: Colors.grey[500],
+              ),)
+            ],
+          ),
         ],
       ),
       
