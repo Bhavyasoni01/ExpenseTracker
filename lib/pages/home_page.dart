@@ -85,7 +85,6 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       body: SafeArea(
         child: RefreshIndicator(
           onRefresh: _refreshData,
@@ -310,7 +309,7 @@ class _HomePageState extends State<HomePage> {
                       width: 100,
                       height: 100,
                       animate: true,
-                      repeat: true,
+                      repeat: false,
                       ),
                       SizedBox(height: 15,),
                       Text('No Transactions Yet',

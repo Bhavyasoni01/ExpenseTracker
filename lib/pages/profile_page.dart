@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:notes_app/auth/auth_service.dart';
 import 'package:notes_app/components/tiles_profile.dart';
+import 'package:notes_app/pages/settings.dart';
 
 class ProfilePage extends StatefulWidget {
 const ProfilePage({super.key});
@@ -86,10 +87,13 @@ class _ProfilePageState extends State<ProfilePage> {
                 // Settings tile
 
                 TilesProfile(
-                icon: Icons.settings, 
-                title: 'Settings', 
-                subtitle: 'App Prefrences', 
-                onTap: (){}),
+                  icon: Icons.settings, 
+                  title: 'Settings', 
+                  subtitle: 'App Prefrences', 
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => SettingsPage()));
+                  },
+                ),
 
                 SizedBox(height: 15,),
 
