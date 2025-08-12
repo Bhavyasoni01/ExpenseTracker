@@ -138,7 +138,6 @@ class _AddPageState extends State<AddPage> {
                                   style: TextStyle(
                                     color: Colors.black,
                                     fontSize: 16,
-                                   
                                   ),),
                                 ],
                               ),
@@ -228,29 +227,6 @@ class _AddPageState extends State<AddPage> {
                       ),
                     );
                   }).toList(),
-
-
-
-
-
-                
-              
-                  
-              
-              
-              
-              
-              
-                  
-              
-              
-                  
-              
-                  
-              
-              
-              
-              
                 ],
               ),
             )

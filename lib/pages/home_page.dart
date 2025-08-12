@@ -309,7 +309,7 @@ class _HomePageState extends State<HomePage> {
                       width: 100,
                       height: 100,
                       animate: true,
-                      repeat: false,
+                      repeat: true,
                       ),
                       SizedBox(height: 15,),
                       Text('No Transactions Yet',

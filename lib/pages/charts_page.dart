@@ -1,5 +1,6 @@
 
 
+import 'package:bounce/bounce.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bounceable/flutter_bounceable.dart';
@@ -246,27 +247,28 @@ class _ChartsPageState extends State<ChartsPage> {
                     SizedBox(height: 30,),
 
                     Center(
-                      child: ToggleSwitch(
-                        minWidth: 200,
-                        minHeight: 50,
-                        initialLabelIndex: selectedToggleIndex,
-                        cornerRadius: 10,
-                        activeFgColor: Colors.black,
-                        inactiveBgColor: Colors.grey[400],
-                        inactiveFgColor: Colors.white,
-                        totalSwitches: 2,
-                        labels: ['Income', 'Expense',],
-                        
-                        fontSize: 16,
-                        animate: false, 
-                        activeBgColor: [Colors.orange,],
-                        onToggle: (index){
-                            setState(() {
-                              selectedToggleIndex = index!;
-                            });
-                        },
-                    ),
-                  ),
+                      child: Bounce(
+                        child: ToggleSwitch(
+                          minWidth: 200,
+                          minHeight: 50,
+                          initialLabelIndex: selectedToggleIndex,
+                          cornerRadius: 10,
+                          activeFgColor: Colors.black,
+                          inactiveBgColor: Colors.grey[400],
+                          inactiveFgColor: Colors.white,
+                          totalSwitches: 2,
+                          labels: ['Income', 'Expense',],
+                          fontSize: 16,
+                          animate: false, 
+                          activeBgColor: [Colors.orange,],
+                          onToggle: (index){
+                              setState(() {
+                                selectedToggleIndex = index!;
+                              });
+                          },
+                                            ),
+                      ),
+                                      ),
                   SizedBox(height: 30,),
 
                   _buildTransactions(),
