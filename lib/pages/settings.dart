@@ -16,20 +16,6 @@ class _SettingsPageState extends State<SettingsPage> {
   bool isDarkMode = false;
 
 
-  void _getCurrentTheme(){
-    final ThemeMode = AdaptiveTheme.of(context).mode;
-    setState(() {
-      isDarkMode = ThemeMode == AdaptiveThemeMode.dark;
-    });
-
-  @override
-  void initState(){
-    super.initState();
-    _getCurrentTheme();
-  }
-
-  
-  }
 
   @override
   Widget build(BuildContext context) {
