@@ -89,7 +89,7 @@ class _HomePageState extends State<HomePage> {
         child: RefreshIndicator(
           onRefresh: _refreshData,
           color: Colors.deepPurple,
-          backgroundColor: Colors.white,
+          backgroundColor: Colors.grey[50],
           strokeWidth: 3,
           displacement: 50,
           child: CustomScrollView(
@@ -98,7 +98,7 @@ class _HomePageState extends State<HomePage> {
               SliverAppBar(
                 floating: true,
                 snap: true,
-                backgroundColor: Colors.white,
+                backgroundColor: Colors.grey[50],
                 elevation: 0,
                 centerTitle: true,
                 title: Text('Home',
